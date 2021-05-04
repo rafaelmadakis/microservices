@@ -13,13 +13,21 @@ import org.modelmapper.ModelMapper;
 
 import com.rafael.crud.data.vo.ProdutoVO;
 
-import lombok.Data;
+import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Table(name = "produto")
-@Data
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@Setter
+@Getter
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode
 public class Produto implements Serializable {
 
 	/**
@@ -28,7 +36,6 @@ public class Produto implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@EqualsAndHashCode.Include
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 

@@ -37,7 +37,7 @@ public class ProdutoService {
 		return ProdutoVO.create(produto);
 	}
 
-	public ProdutoVO findbyId(Long id) {
+	public ProdutoVO findById(Long id) {
 		var entity = produtoRepository.findById(id)
 				.orElseThrow(() -> new ResourceNotFoudException("No records found for this ID"));
 		return ProdutoVO.create(entity);
@@ -53,7 +53,7 @@ public class ProdutoService {
 
 	}
 
-	public void detele(Long id) {
+	public void delete(Long id) {
 		var entity = produtoRepository.findById(id)
 				.orElseThrow(() -> new ResourceNotFoudException("No records found for this ID"));
 
